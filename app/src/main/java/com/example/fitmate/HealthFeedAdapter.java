@@ -11,6 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.ViewHolder> {
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
 
     private List<String> hData, dData;
     private LayoutInflater mInflater;
@@ -35,7 +39,7 @@ public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
         String str1 = hData.get(position);
         String str2 = dData.get(position);
-        holder.myTextView.setText(animal);
+        holder.myTextViewDesc.setText(str1);
     }
 
 
@@ -53,7 +57,7 @@ public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.Vi
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            //if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 

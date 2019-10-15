@@ -3,6 +3,7 @@ package com.example.fitmate
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity(){
         aqi_data.isClickable = true
         aqi_data.setOnClickListener{
             getLocation()
+        }
+        bmiButton.setOnClickListener{
+            startActivity(Intent(this,bmiCheck::class.java))
         }
 
     }
