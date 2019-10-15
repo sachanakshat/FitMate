@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Air Quality Index"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/montserrat"
         android:textSize="14sp"
         />
     <TextView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/aqi"
         android:text="State"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/montserrat"
         android:textSize="24sp"
         android:textColor="@color/textColor"
         />
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/stateName"
         android:text="PM"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/montserrat"
         android:textSize="20sp"
         android:textColor="@color/textColor"/>
     <TextView
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="Health Advisory"
         android:layout_below="@id/levels"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/montserrat"
         android:textSize="16sp"
         android:textColor="@color/textColor"
         />

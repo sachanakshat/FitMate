@@ -12,13 +12,29 @@
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name" />
+        android:text="fitMate" />
 
     <include
         layout="@layout/aqi_data"
+        android:id="@+id/aqi_data"
         android:layout_below="@id/heading"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp" />
+
+    <Button
+        android:id="@+id/bmiButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aqi_data"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/card_background"
+        android:fontFamily="@font/montserrat"
+        android:text="Check your BMI"
+        android:textColor="@color/textColor"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        android:textAllCaps="false"/>
 
 </RelativeLayout>
