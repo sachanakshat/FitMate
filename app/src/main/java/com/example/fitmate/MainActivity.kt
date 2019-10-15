@@ -9,12 +9,16 @@ import android.location.LocationManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.aqi_data.*
 import org.json.JSONObject
 import java.lang.Exception
 
@@ -39,16 +43,17 @@ class MainActivity : AppCompatActivity(){
         w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
     }
 
     fun getLocation(){
-
         var locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         var locationListener = object : LocationListener{
             override fun onLocationChanged(location: Location?) {
                 if(location != null) {
                     gpsLocation = location
                     coordinates = "${location.longitude};${location.latitude}"
+                    url = "https://api.waqi.info/feed/geo:"+coordinates+"/?token=8b13f1ca1e0c3d60b7cf452c526419c63cbc9e71";
                 }
             }
 
@@ -63,8 +68,7 @@ class MainActivity : AppCompatActivity(){
                 != PackageManager.PERMISSION_GRANTED) {
             requestPermission()
         }
-
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0f,locationListener)
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0f,locationListener)
     }
 
     fun requestPermission() {
@@ -83,6 +87,8 @@ class MainActivity : AppCompatActivity(){
                 var iaqi = data.getJSONObject("iaqi")
                 var pm25 = iaqi.getJSONObject("pm25")
                 var value = pm25.getInt("v")
+                var aqiData = findViewById<TextView>(R.id.aqi_data)
+                aqiData.text = "PM2.5: $value"
             }catch (e: Exception){
                 e.printStackTrace()
             }
