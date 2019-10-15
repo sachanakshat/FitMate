@@ -20,6 +20,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.aqi_data.*
+import kotlinx.android.synthetic.main.health_feed.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -38,6 +39,9 @@ class MainActivity : AppCompatActivity(){
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
         val w = window
         w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
@@ -52,6 +56,8 @@ class MainActivity : AppCompatActivity(){
         aqi_data.setOnClickListener{
             getLocation()
         }
+        var newList = arrayListOf("hello","Hello")
+        var adapter = HealthFeedAdapter(this,newList,newList)
 
     }
 
