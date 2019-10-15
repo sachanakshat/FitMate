@@ -11,6 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.ViewHolder> {
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
 
     @Override
     public int getItemCount() {

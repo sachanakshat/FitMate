@@ -3,6 +3,7 @@ package com.example.fitmate
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -58,6 +59,9 @@ class MainActivity : AppCompatActivity(){
         }
         var newList = arrayListOf("hello","Hello")
         var adapter = HealthFeedAdapter(this,newList,newList)
+        bmiButton.setOnClickListener{
+            startActivity(Intent(this,bmiCheck::class.java))
+        }
 
     }
 
