@@ -102,6 +102,22 @@ class MainActivity : AppCompatActivity(){
                 levels.text = string
                 Log.d("Response: ", response.toString())
                 //Log.d("PM2.5: ",value.toString())
+                var newString = " "
+                if(value in 0..50){
+                    newString = "Minimal impact"
+                } else if(value in 50..100){
+                    newString = "May cause minor breathing discomfort to sensitive people."
+                } else if(value in 100..200){
+                    newString = "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults."
+                } else if(value in 200..300){
+                    newString = "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease."
+                } else if(value in 300 ..400){
+                    newString = "\tMay cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases."
+                } else if(value in 400..500){
+                    newString = "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity."
+                }
+                advisory.text = newString
+
 
             } catch (e: JSONException){
                 e.printStackTrace()

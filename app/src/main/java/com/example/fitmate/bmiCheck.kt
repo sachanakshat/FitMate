@@ -15,15 +15,21 @@ class bmiCheck : AppCompatActivity(), View.OnClickListener{
         w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bmi_check)
+        maleCheck.isChecked = true
         maleCheck.setOnClickListener(this)
         femaleCheck.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
-        Toast.makeText(this,"clicked",Toast.LENGTH_SHORT).show()
+
         when(view!!.id){
-            maleCheck!!.id -> femaleCheck.isSelected = false
-            femaleCheck!!.id -> maleCheck.isSelected = false
+            maleCheck!!.id -> {femaleCheck.isChecked = false
+                                if(!maleCheck.isChecked)
+                                    maleCheck.isChecked = true}
+
+            femaleCheck!!.id -> {maleCheck.isChecked = false
+                                    if(!femaleCheck.isChecked)
+                                        femaleCheck.isChecked = true}
         }
     }
 }

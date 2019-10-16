@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/aqi"
-        android:text="State"
+        android:text="Delhi"
         android:fontFamily="@font/montserrat"
         android:textSize="24sp"
         android:textColor="@color/textColor"
