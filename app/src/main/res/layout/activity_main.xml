@@ -53,4 +53,12 @@
         android:textSize="24sp"
         android:textAllCaps="false"/>
 
+    <include
+        layout="@layout/health_feed"
+        android:id="@+id/hfeed"
+        android:layout_below="@id/setGoals"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp" />
+
 </RelativeLayout>

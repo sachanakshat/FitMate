@@ -16,6 +16,11 @@ public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.Vi
         return 0;
     }
 
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
     private List<String> hData, dData;
     private LayoutInflater mInflater;
     private View.OnClickListener mClickListener;;
@@ -39,7 +44,8 @@ public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
         String str1 = hData.get(position);
         String str2 = dData.get(position);
-        holder.myTextViewDesc.setText(str1);
+        holder.myTextViewHeader.setText(str1);
+        holder.myTextViewDesc.setText(str2);
     }
 
 
@@ -52,12 +58,11 @@ public class HealthFeedAdapter extends RecyclerView.Adapter<HealthFeedAdapter.Vi
             super(itemView);
             myTextViewHeader = itemView.findViewById(R.id.rehf1);
             myTextViewDesc = itemView.findViewById(R.id.rehf2);
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            //if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 
