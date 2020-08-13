@@ -1,6 +1,7 @@
 ## FitMate 
 
-Fitmate is modern android application with a supporting website that takes in the user location and calculates AQI (Air Quality Index) of that region. The main purpose of AQI is to suggest user whether he should exercise indoors or outdoors based on the current pollution level. Its supports Fit India movement and encourages healthy lifestyle. 
+Fitmate is modern android application with a supporting website that takes in the user location and calculates AQI (Air Quality Index) of that region. The main purpose of AQI is to suggest user whether he should exercise indoors or outdoors based on the current pollution level. Its supports Fit India movement and encourages healthy lifestyle.
+This project was presented in HackBVP'19
 
 ### Contributors 
 * Saurabh Kumar Suryan
